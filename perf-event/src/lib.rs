@@ -627,6 +627,18 @@ impl<'a> Builder<'a> {
         self
     }
 
+    /// Add sampling type
+    pub fn add_sampling_type(mut self, sampling_type: u64) -> Builder<'a> {
+        self.attrs.sample_type |= sampling_type;
+        self
+    }
+
+    /// Set sample period
+    pub fn set_sampling_period(mut self, sample_period: u64) -> Builder<'a> {
+        self.attrs.__bindgen_anon_1.sample_period = sample_period;
+        self
+    }
+
     /// Construct a [`Counter`] according to the specifications made on this
     /// `Builder`.
     ///
